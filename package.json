@@ -1,0 +1,7 @@
+{
+  "name": "portals-playground-native",
+  "version": "1.0.0",
+  "workspaces": [
+    "web/*"
+  ]
+}
