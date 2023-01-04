@@ -38,16 +38,34 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 }
 
-task CopyWebAssets(type: Copy) {
+task CopyAngular(type: Copy) {
     // Set to the web package you want to bundle.
     // This must point to the distribution folder (e.g, 'www' or 'build')
     def appName = 'ionic-angular/www'
-    // def appName = 'ionic-react/build'
-    // def appName = 'ionic-vue/dist'
 
     def webBuildFolder = '../../../web/'.concat(appName)
     from webBuildFolder
-    into layout.projectDirectory.dir("src/main/assets/portals/playground")
+    into layout.projectDirectory.dir("src/main/assets/portals/angular")
 }
 
-preBuild.dependsOn(CopyWebAssets)
+task CopyReact(type: Copy) {
+    // Set to the web package you want to bundle.
+    // This must point to the distribution folder (e.g, 'www' or 'build')
+    def appName = 'ionic-react/build'
+
+    def webBuildFolder = '../../../web/'.concat(appName)
+    from webBuildFolder
+    into layout.projectDirectory.dir("src/main/assets/portals/react")
+}
+
+task CopyVue(type: Copy) {
+    // Set to the web package you want to bundle.
+    // This must point to the distribution folder (e.g, 'www' or 'build')
+    def appName = 'ionic-vue/dist'
+
+    def webBuildFolder = '../../../web/'.concat(appName)
+    from webBuildFolder
+    into layout.projectDirectory.dir("src/main/assets/portals/vue")
+}
+
+preBuild.dependsOn([CopyAngular, CopyReact, CopyVue])

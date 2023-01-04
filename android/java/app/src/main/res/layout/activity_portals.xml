@@ -6,10 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".ui.PortalsActivity">
 
-    <io.ionic.portals.PortalView
-        android:id="@+id/playground_web_app"
-        app:portalId="playground"
+    <FrameLayout
+        android:id="@+id/portal_angular"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="200dp"/>
+
+    <FrameLayout
+        android:id="@+id/portal_react"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@+id/portal_angular"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <FrameLayout
+        android:id="@+id/portal_vue"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@+id/portal_react" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

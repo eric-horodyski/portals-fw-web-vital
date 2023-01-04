@@ -11,8 +11,9 @@ public class PlaygroundApp extends Application {
         super.onCreate();
         PortalManager.register(getString(R.string.portals_api_key));
 
-        String name = "playground";
-        String startDir = "portals/playground";
-        PortalManager.newPortal(name).setStartDir(startDir).create();
+        
+        PortalManager.newPortal("portal_angular").setStartDir("portals/angular").create();
+        PortalManager.newPortal("portal_react").setStartDir("portals/react").create();
+        PortalManager.newPortal("portal_vue").setStartDir("portals/vue").create();
     }
 }

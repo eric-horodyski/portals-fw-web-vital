@@ -1,15 +1,15 @@
 import { IonContent, IonPage } from "@ionic/react";
 import ExploreContainer from "../components/ExploreContainer";
-import "./Home.css";
+import "./Tab2.css";
 
-const Home: React.FC = () => {
+const Tab2: React.FC = () => {
   return (
     <IonPage>
       <IonContent fullscreen>
-        <ExploreContainer />
+        <ExploreContainer name="Tab 2 page" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Home;
+export default Tab2;
